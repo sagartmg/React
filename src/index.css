@@ -108,6 +108,8 @@ code {
  display:flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  /*text-align: */
 }
 .roomsHero {
   background-image: url("./Resort/images/room-2.jpeg");
@@ -116,24 +118,41 @@ code {
 .banner{
 	color: white;
 }
-.servicess{
-	background: white;
-	display: flex;
-	justify-content: space-around;
-	/*list-style: none;*/
-
-}
 .services{
-	display: flex;
+	/*height: 200px;*/
 	background-color: white;
-	/*list-style: none;*/
-	justify-content: space-around;
+	display: flex;
+	/*align-items: center;*/
+	/*justify-content: center;*/
 }
-.services ul{
-	list-style: none;
-	text-decoration: none;
-	/*list-style-type: none;*/
+.services-items{
+	/*padding: 20px;*/
+	text-align: center;
+	/*display:flex-block;*/
+	/*justify-content: center;*/
+	margin: 20px;
+	background-color:grey;
+	text-transform: uppercase;
+}
+.services-items>div{
+	/*padding-left: 14px;*/
+	color: white;
+	font-size: 2.6rem;
+	/*text-align: left;*/
 
+
+
+
+}
+.feautred-images{
+	display: inline-flex;
+	margin: 10px;
+
+
+}
+.fimages{
+	width:200px;
+	height: 200px;
 }
 
 

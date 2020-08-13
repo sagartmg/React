@@ -3,10 +3,10 @@
 <style type="text/css">
 
 *{
-	background-color: red;
+	background-color: ;
 }
 :root{
-	background-color: green;
+	background-color: grey;
 }
 /*html{
 	background-color: blue;
@@ -22,9 +22,26 @@
 .flex{
 	background: white;
 	width: 200px;
+	position: relative;
 	
 
 }
+
+.parent{
+	position: static;
+	background-color: blue;
+	height: 200px;
+	width: 200px;
+
+}
+.child{
+	position: absolute;
+	background-color: white;
+	height: 50px;
+	width: 50px;
+	top:30px;
+	right: 10px;
+
 
 
 </style>
@@ -50,6 +67,15 @@
 			p21
 		</p>
 	</div>
+
+
+<div class="parent">
+
+	<div class="child">
+		
+	</div>
+</div>
+
 
 
 </body>

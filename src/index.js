@@ -21,16 +21,17 @@ import Twelve from './Twelve/twelve'
 import Assign from './Ten/assign'
 import Resort from './Resort/resort'
 import Navbar from './Resort/Components/navbar'
+import {RoomProvider} from './Resort/roomContext'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <RoomProvider>
   <Router>
   <Navbar/>
   <Resort/>
   </Router>
+  </RoomProvider>,
  
   
-  </React.StrictMode>,
   document.getElementById('root')
 );
 
