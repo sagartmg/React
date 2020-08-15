@@ -10,7 +10,7 @@ import items from './data'
  			filteredRoom:[],
  	 	room:[],
  	 	sortedRooms:[],
- 	 	laoding:true
+ 	 	loading:true
 
  		}
  		this.getRoom= this.getRoom.bind(this)
@@ -58,4 +58,17 @@ render(){
 
 }
 const RoomConsumer = RoomContext.Consumer;
+
+
+export function WithRoomConsumer(Component){ 
+	return function ConsumerWrapper(props){
+		return <RoomConsumer>
+		{value =>  <Component {...props}  context={value}/>}
+		</RoomConsumer>
+	}
+	
+
+}
+
+
 export{RoomContext, RoomProvider, RoomConsumer};

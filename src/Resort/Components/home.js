@@ -6,7 +6,7 @@ import Services from './services'
 import Resort from '../resort'
 import {RoomContext} from '../roomContext'
 import Room from './romm'
-
+import RoomContainer from './roomContainer'
 
 
 
@@ -34,6 +34,7 @@ export default class Home extends Component{
 		<div  style={{textAlign:"center"}}>
 		<h1> heatured rom.s</h1>
 		{rooms}
+		<RoomContainer/>
 		
 			</div>
 		)

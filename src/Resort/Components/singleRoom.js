@@ -19,18 +19,32 @@ export default class SingleRoom extends Component{
 	render(){
 		const{getroom} = this.context;
 		const room = getroom(this.state.slug);
+		console.log("room",room)
 		// room.map(elm)
+		
+	if(room != undefined){
 		console.log("single",room)
-	if(room != undefined)
+		const [main, ...remainingImg]=room.image;
+		console.log(main);
+		console.log(remainingImg);
+
+		let remain = remainingImg.map((element,index)=>{
+			return(
+					<img key={index} src={element} width="200" height="200"/>
+				)
+		})
 
 
 	return(
 		<>
-		R
+		
 		{room.name}
-		<img src={room.image[0]}/>
+		<img src={main}/>
+		{remain}
+
 		</>
 		)
+	}
 	else{
 		return(
 		<div>
