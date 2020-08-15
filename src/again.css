@@ -1,0 +1,48 @@
+*{
+	padding: 0px;
+	box-sizing: border-box;
+}
+:root{
+	background-color:grey;
+}
+body{
+}
+
+
+.navbar{
+	background-color: #cccccc;
+	display:flex;
+	justify-content: space-around;
+	z-index: -1;
+
+}
+
+.navbar-items{
+	font-size: 2.25rem;
+	display: flex;
+	align-items: center;
+
+}
+.btn-icon{
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+
+}
+.ulo li{
+	display: inline-block;
+	margin:0px 0px 0px 10px;
+	justify-content: space-between;
+	text-decoration: none;
+}
+.toggler{
+	/*height: 100px;*/
+	display: flex;
+	justify-content: space-around;
+}
+.noToggler{
+	/*height: 0px;*/
+	display:none;
+}

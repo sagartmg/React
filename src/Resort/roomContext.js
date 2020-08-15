@@ -4,14 +4,19 @@ import items from './data'
 
  const RoomContext = React.createContext();
  class RoomProvider extends React.Component{
-
- 	 state={
- 	 	filteredRoom:[],
+ 	constructor(){
+ 		super();
+ 		this.state={
+ 			filteredRoom:[],
  	 	room:[],
  	 	sortedRooms:[],
  	 	laoding:true
 
- 	 }
+ 		}
+ 		this.getRoom= this.getRoom.bind(this)
+ 	}
+
+ 	 
 
 componentDidMount(){
 	let room = this.formatData(items);
@@ -21,6 +26,13 @@ componentDidMount(){
 		this.setState({room,filteredRoom,sortedRooms:room})
 	
 
+}
+
+getRoom(slugg){
+	let tempRooms = [...this.state.room]
+	console.log('tempRooms',tempRooms);
+	const room = tempRooms.find(room=>room.slug == slugg);
+	return room;
 }
 formatData(items){
 	let  data = items.map(element=>{
@@ -36,7 +48,7 @@ formatData(items){
 	
 render(){
 		return(
-			<RoomContext.Provider value={{...this.state}}>
+			<RoomContext.Provider value={{...this.state,getroom:this.getRoom}}>
 			{this.props.children}
 			</RoomContext.Provider>
 			);

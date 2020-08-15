@@ -35,10 +35,7 @@ const adventurer = {
   }
 };
 
-// const dogName = adventurer.name?.name;
 console.log(adventurer.cat?.name || "nope")
-// console.log('dognmae',dogName);
-// expected output: undefined
 
 console.log(adventurer.someNonExistentMethod?.());
 // expected output: undefined

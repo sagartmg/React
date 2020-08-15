@@ -7,9 +7,10 @@ import { Card, CardBody, CardImg, CardTitle, CardImgOverlay } from 'reactstrap'
 
 
 
-export default function DishWithId(){
+export default function DishWithId(props){
 	return(
 		<div>
 		dish with id function
+		
 		</div>)
 }

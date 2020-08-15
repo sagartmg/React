@@ -17,10 +17,10 @@ export default class Home extends Component{
 
 
 	render(){
-	const {filteredRoom: fr}= this.context
+	const {filteredRoom: fr, getroom}= this.context
 	let rooms = fr.map(room=>{
 		return(
-			<Room key={room.id} room={room}  />
+			<Room key={room.id} room={room} getroom={getroom}  />
 			);
 	})
 

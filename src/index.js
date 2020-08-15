@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Example from './eg'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'font-awesome/css/font-awesome.min.css';
-import './index.css'
+import './again.css'
 
 import Menu from './Components/menu'
 
@@ -22,14 +20,20 @@ import Assign from './Ten/assign'
 import Resort from './Resort/resort'
 import Navbar from './Resort/Components/navbar'
 import {RoomProvider} from './Resort/roomContext'
+import ResortAgain from './ResortAgain/resortAgain'
+// import Navbar from './ResortAgain/Components/navbar'
+import {MenuProvider} from './ResortAgain/Components/context'
+
 
 ReactDOM.render(
-  <RoomProvider>
-  <Router>
-  <Navbar/>
-  <Resort/>
-  </Router>
-  </RoomProvider>,
+	<RoomProvider>
+	<Router>
+			<Navbar/>
+	
+	<Resort/>
+	</Router>
+	</RoomProvider>
+	,
  
   
   document.getElementById('root')
