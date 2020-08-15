@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "761530258540",
+    "firebase_url": "https://recall-7c806.firebaseio.com",
+    "project_id": "recall-7c806",
+    "storage_bucket": "recall-7c806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761530258540:android:d01c922608cf44b0c47449",
+        "android_client_info": {
+          "package_name": "com.example.recall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761530258540-6t5h727hma2ddc7ddgnr8hjhoovjnpmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxXxcowvu_m5SAnaR6LgYIYIkGiQg5FbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761530258540-6t5h727hma2ddc7ddgnr8hjhoovjnpmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
