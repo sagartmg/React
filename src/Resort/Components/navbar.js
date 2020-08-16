@@ -29,7 +29,7 @@ export default class Navbar extends React.Component{
         <nav className="navbar" onMouseLeave={this.leave}>
 		<div className="nav-center">
 			<div className="nav-header">
-				<Link to="/">
+				<Link to="/form">
 						<img src={logo}/>
 				</Link>	
 				<NavLink style={{display:"inline"}}/>
