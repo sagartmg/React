@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+body {
+padding-top: 66px;
+  color: var(--mainBlack);
+  background: grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+}
+
+body {
+  margin: 50;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.heading{
+	color:red;
+	margin:100;
+}
+
+.navbar {
+	margin-top: -66px;
+  position: fixed;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  /*height:100px;*/
+  background: var(--offWhite);
+  z-index: 1;
+}
+
+.nav-header {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-between;
+  font-size: 1.2rem;
+
+
+}
+.nav-btn {
+	display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5rem;
+}
+.nav-center{
+	background-color: transparent;
+}
+
+
+.try{
+	overflow:hidden;
+	height: 0px;
+	font-size: 2rem;
+	/*display: none;*/
+}
+.display{
+	overflow: visible;	
+	height: 100px;
+	transition: var(--mainTransition);
+
+}
+.remove{
+	/*list-style-type: none;*/
+	/*text-decoration: none;*/
+	text-align: center; 
+	/*transition: var(--mainTransition);*/
+	justify-content: space-around;
+
+}
+
+.remove li{
+	display: inline-block;
+	margin: 5px;
+}
+.heading{
+		color:red;
+	}
+
+.defaultHero,
+.roomsHero {
+  height:calc(100vh - 66px);
+  background: url("./Resort/images/defaultBcg.jpeg") center/cover no-repeat;
+ display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*text-align: */
+}
+.roomsHero {
+  background-image: url("./Resort/images/room-2.jpeg");
+  height: 60vh;
+}
+.banner{
+	color: white;
+}
+.services{
+	/*height: 200px;*/
+	background-color: white;
+	display: flex;
+	/*align-items: center;*/
+	/*justify-content: center;*/
+}
+.services-items{
+	/*padding: 20px;*/
+	text-align: center;
+	/*display:flex-block;*/
+	/*justify-content: center;*/
+	margin: 20px;
+	background-color:grey;
+	text-transform: uppercase;
+}
+.services-items>div{
+	/*padding-left: 14px;*/
+	color: white;
+	font-size: 2.6rem;
+	/*text-align: left;*/
+
+
+
+
+}
+.feautred-images{
+	display: inline-flex;
+	margin: 10px;
+
+
+}
+.fimages{
+	width:200px;
+	height: 200px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+	.heading{
+		color:green;
+	}
+	.nav-btn{
+		display:block;
+	}
+	
+
+
+
+}
+
+@media screen and (min-width:501px) {
+	
+	
+
+
+
+}
+@media screen and (max-width: 700px) {
+
+
+}

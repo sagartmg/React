@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "548450079411",
+    "firebase_url": "https://back-ebcc3.firebaseio.com",
+    "project_id": "back-ebcc3",
+    "storage_bucket": "back-ebcc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548450079411:android:295f8615ef84aaa1d016c6",
+        "android_client_info": {
+          "package_name": "com.example.recall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548450079411-ni6335cuhqfhb3oqtt9v54idlei68veb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtFB0LDdfLvj4BNzM0yKEoZOepf93qs-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548450079411-ni6335cuhqfhb3oqtt9v54idlei68veb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548450079411-n9octp5vujf9sckufsv9p2c3dltjbaoh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recall"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

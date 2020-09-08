@@ -1,0 +1,19 @@
+
+.nav-items{
+	margin:20px;
+
+}
+
+
+.Button{
+	display:none
+}
+
+
+
+ @media screen and (max-width:500px) { 
+ 	.Button{
+ 		display: block;
+ 	}
+
+ }
