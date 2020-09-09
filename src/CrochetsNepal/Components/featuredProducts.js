@@ -1,6 +1,9 @@
 import React,{Component,useContext} from 'react';
 import ReactDOM from 'react-dom';
 
+import {Link} from 'react-router-dom'
+
+
 import '../Css/featuredProductCss.css';
 import {CrochetContext} from '../contentfulDataRetrival'
 
@@ -36,17 +39,18 @@ export default function FeaturedProducts(){
 	const context = useContext(CrochetContext);
 	var color=false;
 
-		console.log(context);
+		// console.log(context);
 
 		const contentfulData =context.response.items
-		console.log("response in featured",contentfulData)
+		// console.log("response in featured",contentfulData)
 
 
 		function updateCart(title,price,imgsrc,contentfulID){
 			let obj = {"title":title,
 						"price":price,
 						"imgsrc":imgsrc,
-						"contentfulID":contentfulID
+						"contentfulID":contentfulID,
+						"item_count":1
 						}
 			
 			context.addToCartFunction(obj)
@@ -54,7 +58,7 @@ export default function FeaturedProducts(){
 
 		if(contentfulData){
 			var featured_data=contentfulData.filter(element=>element.fields.featured ===true)
-			console.log("featured_data",featured_data);
+			// console.log("featured_data",featured_data);
 
 			var contentful_items = featured_data.map((element)=>{
 	        var item_present = context.cart_items.filter((cart_el)=>cart_el.contentfulID==element.sys.id);
@@ -65,7 +69,7 @@ export default function FeaturedProducts(){
 						
 						<Product_image imgg={imgurl} className="product_image">
 							<div className ="featured_item_price">
-							{element.fields.price}
+							Rs: {element.fields.price}
 							</div>
 
 							{item_present.length == 1?
@@ -123,11 +127,14 @@ export default function FeaturedProducts(){
 
 
 				</div>
-				<div className="all_products_btn">
-				<a href="all">
-				ALL PRODUCTS
 
-				</a>
+				<div className="all_products_btn">
+
+					<Link to="/all" style={{textDecoration:"none",color:"black"}} className="toAll">
+					<h1>All Products</h1>
+					</Link>
+
+
 				</div>
 
 

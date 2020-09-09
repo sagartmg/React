@@ -38,14 +38,17 @@ function changeit(){
 
 export default function AllProducts(){
 	const contentful_data = useContext(CrochetContext);
-	console.log(contentful_data);
+	// console.log(contentful_data);
 	const contentful_response = contentful_data.response.items;
-	console.log("respons_______",contentful_response);
+	// console.log("respons_______",contentful_response);
+
+	
 	function updateCart(title,price,imgsrc,contentfulID){
 		let obj = {"title":title,
 						"price":price,
 						"imgsrc":imgsrc,
-						"contentfulID":contentfulID
+						"contentfulID":contentfulID,
+						"item_count":1
 						}
 			
 			contentful_data.addToCartFunction(obj)
@@ -57,14 +60,14 @@ export default function AllProducts(){
 	    var imgurl = element.fields.imageOfCrochetItem[0].fields.file.url;
 	    var item_present = contentful_data.cart_items.filter((cart_el)=>cart_el.contentfulID==element.sys.id);
 	    // alert(item_present);
-	    console.log("item_present",item_present,item_present.length);
+	    // console.log("item_present",item_present,item_present.length);
 
 		return <React.Fragment key={element.sys.id}>
 		<div className="featured_image_container" >
 						
 						<Product_image imgg={imgurl} className="product_image">
 							<div className ="featured_item_price">
-							{element.fields.price}
+							Rs: {element.fields.price}
 							</div>
 							{item_present.length == 1?
 							<TiTickOutline  className ="added_to_cart_ticker icon-header" />
@@ -97,7 +100,8 @@ export default function AllProducts(){
 					</div>
 
 		</React.Fragment>
-	})
+	}
+	)
 
 	}
 	
