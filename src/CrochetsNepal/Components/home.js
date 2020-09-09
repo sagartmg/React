@@ -195,12 +195,18 @@ export default function Home(){
 
 				</div>
 
+
+
 				<div style={{textAlign:"center",marginTop:"20px"}}>
-					<h1> Total Price
-					</h1>
+					{conte.cart_items.length !=0 ?
+					<> 
+					<h1> Total Price</h1>
 					<h2>
 					 Rs: <span style={{textDecoration:"underline"}}>{total_price}</span>
 					</h2>
+					</>
+					:<h1>Cart Empty</h1>}
+					
 				</div>
 
 			</div>
