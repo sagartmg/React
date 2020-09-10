@@ -8,7 +8,7 @@ import CreateClient from './contentfulAPISetup';
      class ContentfulDataRetrival extends React.Component{
      	constructor(props){
      		super(props);
-     		console.log("########",props)
+     		// console.log("########",props)
      		 this.state = {
      	response:[],
      	cart_items:[  {title: "itching muffler",

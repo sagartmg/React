@@ -25,6 +25,7 @@ import ResortAgain from './ResortAgain/resortAgain'
 // import {MenuProvider} from './ResortAgain/Components/context'
 
 import CrochetsNepal from './CrochetsNepal/crochetsNepal'
+import AmazonClone from './AmazonClone/amazonClone'
 
 
 

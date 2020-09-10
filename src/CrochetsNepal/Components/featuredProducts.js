@@ -1,7 +1,7 @@
 import React,{Component,useContext} from 'react';
 import ReactDOM from 'react-dom';
 
-import {Link} from 'react-router-dom'
+import {Link,NavLink} from 'react-router-dom'
 
 
 import '../Css/featuredProductCss.css';
@@ -11,19 +11,20 @@ import styled from 'styled-components'
 import { TiTickOutline } from "react-icons/ti";
 
 
-
 const Product_image =styled.div`
 	width:100%;
 	// min-width: 100%;
 
 	height: 260px;
 	position:relative;
-	overflow: hidden;
+	// overflow: hidden;
 	padding:30px;
 	background:url(${props =>props.imgg}) center/cover no-repeat;
 	background-size:contain;
 	background-position:center;
 	border:1px solid black;
+	// margin-bottom:-10px;
+	background-color:#f2f2f2;
 
 
 
@@ -64,33 +65,33 @@ export default function FeaturedProducts(){
 	        var item_present = context.cart_items.filter((cart_el)=>cart_el.contentfulID==element.sys.id);
 
 				var imgurl = element.fields.imageOfCrochetItem[0].fields.file.url;
-				return(
+				return(	
+
 						<div className="featured_image_container" key={element.sys.id}>
+				<NavLink to={`/products/${element.fields.crochetTitle}/${element.sys.id}`}>
 						
 						<Product_image imgg={imgurl} className="product_image">
 							<div className ="featured_item_price">
-							Rs: {element.fields.price}
+						Rs: {element.fields.price}
 							</div>
 
 							{item_present.length == 1?
 							<TiTickOutline  className ="added_to_cart_ticker icon-header" />
 							:null}
-
-							{item_present.length != 1?
-								<div className="featured_image_add_cart">
-								<button onClick={()=>{updateCart(element.fields.crochetTitle,
+						</Product_image>
+				</NavLink>
+				        {item_present.length != 1?
+								<NavLink to="">
+								<button className="add_cart_btn" onClick={()=>{updateCart(element.fields.crochetTitle,
 									element.fields.price, 
 									element.fields.imageOfCrochetItem[0].fields.file.url,
 									element.sys.id)}}
 									>add to cart</button>
-							</div>:null
+									</NavLink>
+							:null
 
 							}
-							
 
-
-
-						</Product_image>
 						
 							
 						
@@ -99,6 +100,8 @@ export default function FeaturedProducts(){
 						
 						</div>
 					</div>
+
+						
 
 					)
 				
