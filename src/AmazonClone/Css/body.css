@@ -1,0 +1,94 @@
+/*.body_background{}*/
+
+.body{
+	position: relative;
+}
+
+#body_background{
+	/*position: absolute;*/
+	/*opacity: .1;*/
+	/*top: 60px;*/
+	width: 100%;
+	z-index: -1;  
+	/*whats teh point of z-index if it isnt even absolute*/
+	margin-top: 60px;
+	margin-bottom: -10%;
+	/*when doing this...the following property got also its property ..why. */
+	mask-image:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
+}
+.whole_products{
+	/*top: 180px;*/
+	/*left: 0;*/
+	/*right: 0;*/
+	/*z-index: -2;*/
+
+	/*position: absolute;*/
+	max-width: 1000px;
+	margin: 0 auto;
+	/*z-index: 11;*/
+	/*opacity: .1;*/
+	/*padding:5em;*/
+	/*background-color: green;*/
+}
+.products_container{
+	/*position: absolute;*/
+	display: flex;
+	max-width: 1000px;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-around;
+	/*z-index: 11;*/
+}
+
+.products_container_under{
+	/*background-color: grey;*/
+	flex-grow: 1;
+	/*display: none;*/
+}
+.products_each{
+	/*display: none;*/
+	flex-grow: 1;
+	display: flex;
+	max-width: 100%;
+	flex-direction: column;
+	background-color: white;
+	/*align-items: flex-start;*/
+
+}
+.products_rating{
+	display: flex;
+}
+.products_each_image_contaner{
+	background: url(../Images/product.jpg) center/cover no-repeat;
+
+	background-color: cyan;
+	/*height: auto;*/
+	/*width: auto;*/
+	/*height: 400px;*/
+	/*width: 400px;*/
+
+	/*display: flex;*/
+
+}
+.products_each_image_container{
+	/*background-color: cyan;*/
+		display: flex;
+		align-items: center;justify-content: center;
+
+		/*display: none;*/
+}
+.products_each_image{
+	/*width: 100%;*/
+	/*width: 200px;*/
+	/*object-fit: cover;*/
+	/*height: 200px;*/
+	/*width: 200px;*/
+	width: 100%;
+	/*height: 200px;*/
+	height: 50%;
+
+	/*width: 100%;*/
+	/*height:100px;*/
+
+
+}

@@ -1,0 +1,87 @@
+/*header */
+.header{
+	display: flex;
+	background-color: black;
+	color: white;
+	/*justify-content: space-around;*/
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.25rem;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	/*opacity: .1;*/
+	z-index: 11;
+	/*max-width: 100%;*/
+}
+.header_items{
+	margin: 0 10px;
+}
+.header_icons:hover{
+	color: red;
+}
+
+.a_logo{
+	/*max-width: 100%;*/
+	/*width: 200px;*/
+	/*height: 50px;*/
+	/*max-width: 100%;*/
+	width: 10%;
+	/*width: 100px;*/
+	/*margin: 10px;*/
+	/*object-fit: contain;*/
+
+
+}
+.search_bar{
+	display: flex;
+	flex-grow: 1;
+	/*justify-content: space-between;*/
+
+}
+.search_area{
+	/*background-color: white;*/
+	/*height: 100%;*/
+	width: 100%;
+	/*overflow: hidden;*/
+	display: flex;
+	justify-content: center;
+}
+.search_input{
+	width: 90%;
+	/*flex-grow: 1;*/
+	/*margin: 0 10px;*/
+	/*margin: 0 10px;*/
+	/*margin-right: 40px;*/
+	/*margin-left: 10px;*/
+	margin: 5px 0;
+
+}
+.header_btn{
+	background-color: transparent;
+	color: white;
+	outline:none;
+	border-color:transparent;
+}
+
+.info{
+	display: flex;
+
+}
+.info-1{
+	color: #bfbfbf;
+	font-size:1rem;
+}
+.info-items:last-child{
+	margin-left: 10px;
+}
+
+.cart_box{
+}
+.header_icons{
+	font-size: 2rem;
+}
+
+/*end of header*/

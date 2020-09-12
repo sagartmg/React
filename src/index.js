@@ -26,13 +26,15 @@ import ResortAgain from './ResortAgain/resortAgain'
 
 import CrochetsNepal from './CrochetsNepal/crochetsNepal'
 import AmazonClone from './AmazonClone/amazonClone'
+import Portfolio from './Portfolio/portfolio'
+
 
 
 
 
 ReactDOM.render(
 	<Router>
-	<CrochetsNepal/>
+	<Portfolio/>
 	</Router>
 	,
  
