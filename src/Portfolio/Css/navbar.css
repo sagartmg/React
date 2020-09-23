@@ -1,0 +1,145 @@
+/*hamburger*/
+
+.ham_container {
+    max-height: 8vh;
+    display: flex;
+    /*width: auto;*/
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    	/*top:2vw;*/
+    	left: 3vw;
+        top: 5vh;
+        /*margin-top: 100px;*/
+
+}
+
+.ham {
+
+    height: 100%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    /* -moz-user-select: none;  
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  user-select: none;*/
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: white;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham6 .top {
+    stroke-dasharray: 40 172;
+}
+
+.ham6 .middle {
+    stroke-dasharray: 40 111;
+}
+
+.ham6 .bottom {
+    stroke-dasharray: 40 172;
+}
+
+.ham6.active .top {
+    stroke-dashoffset: -132px;
+}
+
+.ham6.active .middle {
+    stroke-dashoffset: -71px;
+}
+
+.ham6.active .bottom {
+    stroke-dashoffset: -132px;
+}
+
+
+/*end hamburger*/
+
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    z-index: 11;
+    height: 8vh;
+    color: white;
+}
+
+.navbar_contents {
+    flex-grow: 1;
+    /*display: flex;*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_contents p {
+    margin-left: 20px;
+    /*background-color: white;*/
+    font-size: 2rem;
+    /*align-items: center;*/
+    display: flex;
+    align-items: center;
+}
+
+.to_top_none {
+    display: none;
+    
+}
+
+.to_the_top_activate {
+    /*background-color: cyan;*/
+    font-size: 3rem;
+    position: fixed;
+    right: 50px;
+    bottom: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+@media (min-width: 567px) {
+    .navbar {
+        /*display: flex;*/
+    }
+    .navbar_contents{
+    	display: flex;
+    }
+    .ham_container{
+    	display: none;
+
+    }
+
+}
+/*@media(max-width: 566px){
+	.ham_container{
+		display: flex;
+	}
+}*/
+@media(max-width: 566px){
+    .navbar{
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    }
+
+    .ham_container{
+        background-color: black;
+    }
+}
+
+@media (min-width: 756px) {}

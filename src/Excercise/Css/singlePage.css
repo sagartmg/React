@@ -1,0 +1,44 @@
+.single_description{
+	display: flex;
+	align-items: center;
+}
+.single_image{
+	flex-grow: 1;
+
+	max-width: 50%;
+}
+
+.single_details{
+	margin-left: 2em;
+}
+#single_title{
+	text-transform: capitalize;
+	font-size: 3rem;
+
+
+}
+#single_price{
+	color: red;
+	font-size: 1.6rem;
+
+}
+
+
+
+#single_describe{
+	margin-top: 1em;
+
+}
+
+@media (min-width: 576px){
+.single_description {
+    margin:  3em;
+}
+}
+
+
+@media (min-width: 768px){
+.single_description {
+    margin: 3em 6em;
+}
+}

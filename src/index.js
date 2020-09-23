@@ -27,6 +27,8 @@ import ResortAgain from './ResortAgain/resortAgain'
 import CrochetsNepal from './CrochetsNepal/crochetsNepal'
 import AmazonClone from './AmazonClone/amazonClone'
 import Portfolio from './Portfolio/portfolio'
+import Excercise from './Excercise/excercise'
+
 
 
 
