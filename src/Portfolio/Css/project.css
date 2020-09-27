@@ -31,3 +31,12 @@
 	/*width: 100%;*/
 	object-fit: contain;
 }
+
+@media (max-width:567px) {
+	.each_projects:first-child{
+	margin-left: 10px;
+	}
+		
+
+
+}

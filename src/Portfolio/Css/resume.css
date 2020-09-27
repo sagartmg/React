@@ -45,3 +45,9 @@
 	/*margin-left: 1.5em;*/
 	padding-left: 1.5em;
 }
+
+@media(max-width: 567px){
+	.resume_container_contents{
+		margin: 0 10px;
+	}
+}

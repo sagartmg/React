@@ -193,9 +193,9 @@ export default function Navbar(){
                 <p className="slider_contents">Home</p>
                 <p className="slider_contents" onClick={to_resume}>Resume </p>
 
-                <p  className="slider_contents" onClick={slider_to_project}>Works</p>
+                <p  className="slider_contents" onClick={slider_to_project}>Project</p>
 
-                <p  className="slider_contents" onClick={slider_to_contact}>Contacts</p>
+                <p  className="slider_contents" onClick={slider_to_contact}>Contact</p>
              </div>
               
 
@@ -229,8 +229,8 @@ export default function Navbar(){
             <p id="home">Home</p>
             <p onClick={to_resume}>Resume</p>
             
-            <p onClick={to_project}>Works</p>
-            <p  onClick={to_contact}>Contacts</p>
+            <p onClick={to_project}>Project</p>
+            <p  onClick={to_contact}>Contact</p>
          </div>
 			
 

@@ -41,7 +41,7 @@ export default function Contact(){
    	return alert("email is empty")
    }
    // if(!email.includes("@")){
-   // 	return alert(" email must contain @ ")
+// 	return alert(" email must contain @ ")
    // }
 
 
@@ -59,8 +59,11 @@ export default function Contact(){
 				return(
 		<>
 		
-	
+	<div style={{textAlign:"center"}} className="contacts_title ">
+		Get in Touch 
+	</div>
  	<div className="form_container">
+
  		<div className="inner_form_container">
 	 	<FiMail style={{fontSize:"2.4rem",marginBottom:"0.3em"}}/>
 	 	<div className="form_container_innner">
@@ -102,14 +105,14 @@ export default function Contact(){
 
 		    </form>
 		    <div className="extra_contacts">
-		    <p>
-		    kathmandu Nepal
+			    <p>
+			    kathmandu Nepal
 
-		    </p>
-		    <p>
-		    +977-12334324
+			    </p>
+			    <p>
+			    +977-12334324
 
-		    </p>
+			    </p>
 
 		    </div>
 

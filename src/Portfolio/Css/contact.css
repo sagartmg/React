@@ -4,8 +4,13 @@
 	display: flex;
 	justify-content: center;
 	color: white;
-	margin-top: 1.5em;
+	/*margin-top: 1.5em;*/
 	padding-top: 1.5em;
+}
+.contacts_title{
+	background-color:  #404040;
+
+
 }
 .inner_form_container{
 	flex-grow: 1;
@@ -72,4 +77,31 @@
 }
 #this{
 	max-width: 50px;
+}
+.contacts_title{
+	color: #bfbfbf;
+	font-size: 2em;
+	padding-top: 1em;
+
+}
+
+
+
+@media(max-width: 576px) {
+	.form_container_innner{
+		display: initial;
+		/*margin: 0 10px;*/
+		/*background-color: orange;*/
+	}
+	.contacts_title{
+		margin: 0 10px;
+
+	}
+	.form_container{
+		margin: 0 10px;
+	}
+	.extra_contacts{
+
+	}
+
 }

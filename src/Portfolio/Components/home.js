@@ -47,7 +47,7 @@ export default function Home(){
 				<img id="banner_image" src={programmer}/>
 				<div className="banner_contents">
 					<p id="sagar">Sagar Tamang</p>
-					<p> I design and develop things that ease the life of others</p> 
+					<p> I design and develop things, that ease the lives of other.</p> 
 				</div>
 			</div>
 			
