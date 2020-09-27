@@ -29,6 +29,21 @@ export default function Contact(){
  */}
  function sendEmail(e) {
     e.preventDefault();
+   console.log(e.target.Email.value);
+   const email = e.target.Email.value;
+   const message = e.target.message.value;
+   console.log("ddsf",email,message);
+   console.log(typeof(email))
+   if(message.length<1){
+   	return alert("message can't be empty");
+   }
+   if(email.length<1){
+   	return alert("email is empty")
+   }
+   // if(!email.includes("@")){
+   // 	return alert(" email must contain @ ")
+   // }
+
 
     emailjs.sendForm('gmail', 'template_762ely2', e.target, 'user_HwsqwcfRjuiftcTpE6gAU')
       .then((result) => {

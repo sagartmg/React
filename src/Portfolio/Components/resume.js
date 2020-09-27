@@ -8,14 +8,18 @@ import '../Css/resume.css'
 
 
 export default function Resume(){
+		useEffect(()=>{
 
+			let resume_container_contents = document.querySelector(".resume_container_contents_inner1");
+			resume_container_contents.style.borderBottom= "none";
+			let resume_container_contents2 = document.querySelector(".resume_container_contents_inner2");
+			resume_container_contents2.style.borderBottom= "none";
+		});
 
-
-
-				return(
+		return(
 		<>
 		
-		<div style={{textAlign:"center"}} className="resume_container_main">
+		<div style={{textAlign:"center"}} className="resume_container_main title">
 		Resume 
 	</div>
 		<div className="resume_container">

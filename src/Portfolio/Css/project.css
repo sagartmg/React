@@ -1,8 +1,11 @@
+.projects_{
+	margin-top: 1.5em;
+}
 .each_projects_container{
-	max-width: 1200px;
+	max-width: 1000px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
 .each_projects{
@@ -12,6 +15,11 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	border: 1px solid black;
+	background-color: #f2f2f2;
+}
+.each_projects:first-child{
+	margin-left: 0;
 }
 
 .each_projects_image{
@@ -20,5 +28,6 @@
 	height: 250px;
 	/*height: 100%;*/
 	/*height: 300px;*/
+	/*width: 100%;*/
 	object-fit: contain;
 }

@@ -35,7 +35,7 @@ export default function Home(){
 	var navbar = document.querySelector(".navbar");
 
  */}
-	
+ 
 
 
 				return(
@@ -44,16 +44,15 @@ export default function Home(){
 		<div className="banner_container">
 		
 			<div className="banner">
-					<img id="banner_image" src={programmer}/>
-
-
-				
-					
+				<img id="banner_image" src={programmer}/>
+				<div className="banner_contents">
+					<p id="sagar">Sagar Tamang</p>
+					<p> I design and develop things that ease the life of others</p> 
+				</div>
 			</div>
-			<div className="banner_contents">
-				<p id="sagar">Sagar Tamang</p>
-				<p> I design and develop things that ease the life of others</p> 
-			</div>
+			
+
+			
 		</div>
 		
 		

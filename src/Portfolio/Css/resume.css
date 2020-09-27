@@ -1,7 +1,12 @@
+.resume_container_main{
+	margin-top: .5em;
+	margin-bottom: .5em;
+
+}
 .resume_container{
 	display: flex;
 	flex-direction: column;
-	max-width: 1200px;
+	max-width: 1000px;
 	margin: 0 auto;
 	height: 50vh;
 	justify-content: space-around;
@@ -24,4 +29,19 @@
 	flex-direction: column;
 	/*align-self: center;*/
 	justify-content: space-around;
+}
+
+
+
+.resume_container_contents div{
+	border: 1px solid black;
+}
+.resume_container_contents div:last-child{
+	/*display: none;*/
+	border-left: none;
+}
+
+.resume_container_contents_inner2{
+	/*margin-left: 1.5em;*/
+	padding-left: 1.5em;
 }

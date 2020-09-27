@@ -25,8 +25,8 @@ export default function Project(){
 	console.log(response,"projects")
 	return(
 		<>
-		<div className="projects_">
-				<p style={{textAlign:"center"}} className="projects_container_main"> Projects
+		<div className="projects_ ">
+				<p style={{textAlign:"center"}} className="projects_container_main title"> Projects
 				</p>
 			<div className="projects_container">
 			

@@ -4,6 +4,8 @@
 	display: flex;
 	justify-content: center;
 	color: white;
+	margin-top: 1.5em;
+	padding-top: 1.5em;
 }
 .inner_form_container{
 	flex-grow: 1;
