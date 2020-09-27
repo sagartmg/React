@@ -116,7 +116,7 @@ export default function Navbar(){
     }
     function to_contact(){
       toggle();
-    	let contacts_top = document.querySelector(".form_container").offsetTop;
+    	let contacts_top = document.querySelector(".contacts_title").offsetTop;
     	let navbar_height =document.querySelector(".navbar").getBoundingClientRect().height
     	let to_co = contacts_top-navbar_height;// cause in teh middel, teh navbar gets out...
     	window.scrollTo({top:to_co});  
@@ -125,7 +125,7 @@ export default function Navbar(){
     }
      function slider_to_contact(){
       toggle();
-      let contacts_top = document.querySelector(".form_container").offsetTop;
+      let contacts_top = document.querySelector(".contacts_title").offsetTop;
       let navbar_height =document.querySelector(".navbar").getBoundingClientRect().height
       let to_co = contacts_top-navbar_height;// cause in teh middel, teh navbar gets out...
       window.scrollTo({top:contacts_top});  
