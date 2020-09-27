@@ -44,6 +44,11 @@
 	.footer_container_inner1 div{
 	margin-left: 0.6em;
 	}
+	.blank_footer_top{
+		height:16px;
+	background-color:  #404040;
+			}
+
 	/*.footer_icons{
 	margin-left:0.5em;
 }

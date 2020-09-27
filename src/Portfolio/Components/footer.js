@@ -23,6 +23,8 @@ import '../Css/contact.css'
 export default function Footer(){
 				return(
 		<>
+		<div className="blank_footer_top">
+		</div>
 		<div className="footer_container">
 			<div className="footer_container_inner">
 				<div className="footer_container_inner1">
