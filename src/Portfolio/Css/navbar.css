@@ -77,12 +77,12 @@
 
 .navbar_slider{
     /*border-radius:2%;*/
-    border-top-right-radius: 3%;
-    border-bottom-right-radius:3%;
+    border-bottom-left-radius: 4%;
+    border-bottom-right-radius:4%;
 
     width: 100vw;
     min-height: 50vh;
-    background-color: orange;
+    background-color: navajowhite;
     position: fixed;
     top: 0;
     display: flex;

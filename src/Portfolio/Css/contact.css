@@ -93,12 +93,15 @@
 		/*margin: 0 10px;*/
 		/*background-color: orange;*/
 	}
+	.inner_form_container{
+		margin:0 10px;
+	}
 	.contacts_title{
-		margin: 0 10px;
+		/*margin: 0 10px;*/
 
 	}
 	.form_container{
-		margin: 0 10px;
+		/*margin: 0 10px;*/
 	}
 	.extra_contacts{
 
