@@ -12,6 +12,8 @@ import MyWork from './Components/myWork'
 
 
 import Navbar from './Components/navbar'
+import Footer from './Components/footer'
+
 import {ContentfulDataRetrival} from './contentfulDataRetrival'
 import { MdArrowUpward } from 'react-icons/md';
 
@@ -33,6 +35,7 @@ export default function Portfolio(){
 	<Resume/>
 	<Project/>
 	<Contact/>
+	<Footer/>
 
 	
 	</ContentfulDataRetrival>
