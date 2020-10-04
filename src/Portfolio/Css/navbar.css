@@ -204,7 +204,7 @@
 
 @media (min-width: 567px) {
     .navbar {
-        /*display: flex;*/
+        display: flex !important;
     }
     .navbar_contents{
     	display: flex;
@@ -231,6 +231,7 @@
     right: 0;
     left: 0;
     background-color: transparent;
+    
     }
 
     .ham_container{

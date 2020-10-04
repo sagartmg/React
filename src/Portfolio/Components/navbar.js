@@ -59,9 +59,10 @@ export default function Navbar(){
                let contacts = document.querySelector(".resume_container_main") 
                let navheight = document.querySelector(".navbar").getBoundingClientRect().height;
 		    	let contacts_height = contacts.offsetTop;
+
                if(y_scrolled > contacts_height-navheight){
                   to_top.classList.add("to_the_top_activate");
-		    		document.querySelector(".navbar").style.display="none";
+		    	      	document.querySelector(".navbar").style.display="none";
 
               
               
@@ -98,7 +99,7 @@ export default function Navbar(){
       document.querySelector(".navbar_slider_contents_container").classList.remove("show_slider_contents")
 
               // alert("f")
-              console.log("out")
+              // console.log("out")
 
             })
    
@@ -170,12 +171,15 @@ export default function Navbar(){
     	// alert(contacts)
     	console.log(contacts)
 
-    	window.scrollTo({
-    		top:contacts_height,
-    	})
+      // todo if case..if navbar not disabled ,,then ....
+         window.scrollTo({
+          top:contacts_height,
+        })
 
-
+     
     }
+
+   
 
    
 
@@ -229,8 +233,8 @@ export default function Navbar(){
             <p id="home">Home</p>
             <p onClick={to_resume}>Resume</p>
             
-            <p onClick={to_project}>Project</p>
-            <p  onClick={to_contact}>Contact</p>
+            <p onClick={slider_to_project}>Project</p>
+            <p  onClick={slider_to_contact}>Contact</p>
          </div>
 			
 

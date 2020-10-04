@@ -20,7 +20,14 @@
 	cursor: pointer;
 }
 .footer_container_inner1{
+	color:#bfbfbf;
 	display: flex;
+}
+
+.footer_container_inner1 a{
+	text-decoration: none;
+	color:#bfbfbf;
+	
 }
 .footer_container_inner1 div{
 	margin-left: 2em;

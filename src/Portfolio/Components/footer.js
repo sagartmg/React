@@ -28,7 +28,13 @@ export default function Footer(){
 		<div className="footer_container">
 			<div className="footer_container_inner">
 				<div className="footer_container_inner1">
-					<div><AiFillGithub className="footer_icons" /></div>
+					<div>
+							<a href="https://github.com/sagartmg/"  target="blank">
+									<AiFillGithub className="footer_icons"/>
+
+							
+							</a>
+					</div>
 					<div><ImFacebook className="footer_icons"/></div>
 					<div><AiOutlineInstagram className="footer_icons"/></div>
 					<div><AiFillLinkedin className="footer_icons"/></div>

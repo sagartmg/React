@@ -1,9 +1,8 @@
-import React,{useEffect,useContext}from 'react';
+import React,{useState,useEffect,useContext}from 'react';
 import ReactDOM from 'react-dom';
 import emailjs from 'emailjs-com'
 import { FiMail } from 'react-icons/fi';
-
-
+import { Alert } from 'reactstrap';
 
 import '../Css/contact.css'
 
@@ -11,18 +10,17 @@ import '../Css/contact.css'
 
 
 export default function Contact(){
-	useEffect(()=>{
-		console.log("all laoded. ")
-		{/* 
-		var labels = document.querySelector(".form_labels");
-		var widd = labels.getBoundingClientRect().width;
-		// alert(widd)
-		console.log(widd)
+	const [visible, setVisible] = useState(false);
 
-		var submit_btn = document.querySelector("#this");
-		submit_btn.style.marginLeft=`${widd}px`;
- */}
-	});
+
+	useEffect(()=>{
+		console.log("useEffect in contact")
+		setTimeout(()=>{
+			setVisible(false);
+
+		},2000)
+		
+	},[visible]);
 {/* why useEFFect cant we use cdocument conent loaded insted
   document.addEventListener("DOMContentLoaded", loaded, false);
 
@@ -51,6 +49,7 @@ export default function Contact(){
       }, (error) => {
           console.log(error.text);
       });
+      setVisible(true);
      e.target.reset();
   }
 
@@ -58,6 +57,8 @@ export default function Contact(){
 
 				return(
 		<>
+		 {visible && <p className="msg_success"> Message successfully sent !!
+		 </p>}
 		
 	<div style={{textAlign:"center"}} className="contacts_title ">
 		Get in Touch 
@@ -106,11 +107,11 @@ export default function Contact(){
 		    </form>
 		    <div className="extra_contacts">
 			    <p>
-			    kathmandu Nepal
+			    kathmandu, Nepal
 
 			    </p>
 			    <p>
-			    +977-12334324
+			    +977-9813046702
 
 			    </p>
 

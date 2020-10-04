@@ -15,7 +15,8 @@ import {PortfolioContext} from '../contentfulDataRetrival'
 
 export default function Home(){
 	const contentful_data = useContext(PortfolioContext);
-	console.log(contentful_data.response);
+	console.log("contentful_data response",contentful_data.response);
+
 
 	
 {/* 

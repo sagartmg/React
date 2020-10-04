@@ -36,6 +36,7 @@ import Excercise from './Excercise/excercise'
 
 ReactDOM.render(
 	<Router>
+	
 	<Portfolio/>
 	</Router>
 	,

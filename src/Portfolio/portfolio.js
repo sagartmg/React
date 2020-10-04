@@ -16,7 +16,9 @@ import Footer from './Components/footer'
 
 import {ContentfulDataRetrival} from './contentfulDataRetrival'
 import { MdArrowUpward } from 'react-icons/md';
-
+import {Switch, Route,Redirect} from 'react-router-dom'; 
+import AllProjects from './Components/allprojects';
+import LandingPage from './Components/landingPage'
 
 
 
@@ -30,12 +32,13 @@ export default function Portfolio(){
 		<>
 	{/* Switch and Routes...*/}
 	<ContentfulDataRetrival>
-	<Navbar/>
-	<Home/>
-	<Resume/>
-	<Project/>
-	<Contact/>
-	<Footer/>
+
+	<Switch>
+	<Route  exact path="/" component={LandingPage}/>
+	<Route exact path="/projects/all" component={AllProjects}/>
+	<Redirect to="/"/>
+	
+	</Switch>
 
 	
 	</ContentfulDataRetrival>
