@@ -95,6 +95,28 @@ header{
 
 }
 
+.order{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.4em;
+
+}
+.order_btn{
+	margin-top: 1.4em;
+	padding:7px 0;
+
+}
+
+#order_success{
+	display: flex;
+	align-items: center;
+}
+#tick_mark{
+	color: green;
+	font-size: 1.8rem;
+}
+
+
 .div-cross{
 	position: relative;
 	margin-bottom: 2em;
@@ -104,9 +126,6 @@ header{
 	right: 0px;
 }
 
-#fuck{
-	/*display: none;*/
-}
 
 
 .small-nav ul{

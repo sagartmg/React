@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import background  from '../Images/background.jpg'
 import '../Css/home.css'
@@ -13,6 +13,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import {ContentfulDataRetrival,CrochetContext} from '../contentfulDataRetrival';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import { TiTick } from 'react-icons/ti';
 
 
 
@@ -31,9 +32,15 @@ const Cart_item_image = styled.div`
 
 
 export default function Home(){
+	const [order ,setOrder] = useState(false);
 	const conte = useContext(CrochetContext);
 	const contt = conte.addToCartFunction
 	const update = conte.updateValue
+
+	useEffect(()=>{
+		setOrder(false);
+
+	},[conte])
 
 	console.log("___________",conte)
 	function showNavigation(){
@@ -206,6 +213,16 @@ export default function Home(){
 					</h2>
 					</>
 					:<h1>Cart Empty</h1>}
+
+					{ order? <p id="order_success"> Your order has been place successfully <TiTick id="tick_mark"/></p> : 
+					         <div className="order">
+					         <input type="text" placeholder="name && phone-number"/>
+
+							<button className="cart_item_remove_btn order_btn"
+						onClick={()=>{setOrder(true)}}
+						> Place Order </button>
+						</div>
+						}
 					
 				</div>
 
