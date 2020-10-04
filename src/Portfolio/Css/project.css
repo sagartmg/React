@@ -38,9 +38,9 @@
 
 
 .all_projects_btn{
-	padding: 0 5px;
-	border-radius: 5px;
-
+	padding:8px 10px;
+	border-radius: 10px;
+	background-color: #bfbfbf;
 }
 
 @media (max-width:567px) {

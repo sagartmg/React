@@ -75,6 +75,7 @@
 #this{
 	padding:8px 10px;
 	border-radius: 10px;
+	background-color: #bfbfbf;
 }
 .form_contents_row span{
 	color: red;
