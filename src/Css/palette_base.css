@@ -1,0 +1,19 @@
+.palette_base_container{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(70px,1fr));
+
+}
+
+.palatee_base{
+	height: 60px;
+	position: relative;
+}
+
+#base_color_name{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	/*font-size: .5rem;*/
+	/*display: none;*/
+}

@@ -1,0 +1,15 @@
+.palette_range_container{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
+}
+
+.palette_range{
+	position: relative;
+}
+
+#scale{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+}

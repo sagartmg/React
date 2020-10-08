@@ -1,0 +1,34 @@
+.house_container{
+	flex:6;
+	max-width: 65vw;
+	
+}
+
+
+.dummy{
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+}
+#dummy{
+	width: 100%;
+	height: 100%;
+	background-color:pink;
+}
+path.main{
+	fill: green;
+	stroke: black;
+	stroke-width:1px;
+	opacity:0.5;
+}
+path.detail{
+	fill: red;
+	opacity:0.5;
+
+}
+
+path.toppings{
+	fill: orange;
+	opacity:0.5;
+	
+}
