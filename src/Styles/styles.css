@@ -1,0 +1,89 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	/*border: 1px solid teal;*/
+	/*justify-content: space-between;*/
+}
+
+/*body{*/
+/*	font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
+	background-color: black;
+	color: #333333;
+	font-size: 16px;
+}*/
+/*.div{
+	display: inline-block;
+}*/
+
+
+
+.hide{
+	/*background-color: pink;*/
+	/*height: 0px;*/
+	/*overflow: hidden;*/
+	transition: all 3s linear;
+	/*visibility: hidden;*/
+	display: none;
+
+}
+
+.show{
+	/*height: 100px;*/
+	/*display: flex;*/
+	/*visibility: visible;*/
+	display: initial;
+	/*background-color: orange;*/
+	transition: all 3s linear;
+}
+
+.faqq{
+	font-size: 3rem;
+}
+@media(max-width: 992px){
+	.faqq{
+		font-size: 1.8rem;
+	}
+	.button_container_subscription{
+		margin-top: .5em;
+	}
+}
+
+.button_container_subscription{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+
+}
+
+.img_video_container img{
+	position: relative;
+    max-width: 100%;
+    z-index: 1;
+
+}
+.img_video_container video{
+	 position: absolute;
+    top: 22%;
+    left: 56%;
+    max-width: 450px;
+
+}
+
+.tv-imagee3_{
+    position: relative;
+    max-width: 100%;
+    z-index: 1;
+}
+
+.tv-video_ {
+    position: absolute;
+    top: 22%;
+    left: 56%;
+    max-width: 450px;
+}
+
+.boys_video{
+	position: absolute;
+}
