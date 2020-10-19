@@ -5,11 +5,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {GlobalStyles} from './global_style'
+import {BrowserRouter as Router } from 'react-router-dom'
+import RouterSetup from './router_setup'
+import {firebase} from './firebase_prod'
+import {FirebaseContext} from './firebase_context'
+
 
 ReactDOM.render(
+
   <React.StrictMode>
+  <FirebaseContext.Provider value={{firebase}}>
+  <Router>
   <GlobalStyles/>
-    <App />
+    <RouterSetup />
+   </Router>
+   </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

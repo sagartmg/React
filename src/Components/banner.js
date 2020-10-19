@@ -62,11 +62,17 @@ const Container = styled.div`
 	}
 `
 
-export default function Banner(){
+export default function Banner({children, pathname}){
+	console.log("signin",pathname)
+	console.log("children",children)
+
 	return <Background  src="/images/misc/home-bg.jpg">
 		<Row>
 			<Logo src="/images/Netflix_logo.png"/>
-			<Button>
+			
+
+
+			{pathname !="/signin" && <Button>
 			<button style={{background:"#e50914",
 			outline:"none",
 			border:"transparent",
@@ -78,11 +84,12 @@ export default function Banner(){
 			}}>
 			Sign In
 			</button>
-			</Button>
+			</Button>}
 
 		</Row>
+		{children}
 
-		<Container>
+		{ pathname!="/signin" && <Container>
 				<h1 style={{
 					textAlign:"center",
 					fontSize:"3rem"
@@ -114,7 +121,7 @@ export default function Banner(){
 
 				}}>Only new members are eligible for this offer.
 			</p>
-	    </Container>
+	    </Container>}
 
 
 

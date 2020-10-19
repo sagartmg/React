@@ -2,7 +2,7 @@
 	margin:0;
 	padding: 0;
 	box-sizing: border-box;
-	/*border: 1px solid teal;*/
+	border: 1px solid teal;
 	/*justify-content: space-between;*/
 }
 
@@ -27,6 +27,7 @@
 	display: none;
 
 }
+
 
 .show{
 	/*height: 100px;*/
