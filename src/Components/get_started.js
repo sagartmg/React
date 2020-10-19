@@ -30,7 +30,8 @@ export default function GetStarted(){
     flexGrow:"1",
     border:"none",
     outline:"transparent",
-    borderRadius:"5px",
+    borderTopLeftRadius:"5px",
+    borderBottomLeftRadius:"5px"
 	}}/>
 
 	<div className="button_container_subscription">
@@ -40,7 +41,10 @@ export default function GetStarted(){
 		padding:"0.4em 0.8em",
 		color:"white",
 		fontSize:"1.2rem",
-		height:"100%"
+		height:"100%",
+		borderBottomRightRadius:"5px",
+		borderTopRightRadius:"5px"
+
 
 		}}>
 		GET STARTED >

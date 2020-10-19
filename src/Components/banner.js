@@ -27,7 +27,7 @@ background:url(${({src})=>src}) center/cover no-repeat;
 	background:${props=>{
 		// alert(props)
 		// console.log("signin",props)
-		return props.path=="/signin" ? "black" : null
+		return props.path=="/signin" || props.path=="/signup"? "black" : null
 	}
 	
 
@@ -94,7 +94,7 @@ export default function Banner({children, pathname}){
 			
 
 
-			{pathname !="/signin" && <Button>
+			{pathname !="/signin" && pathname!="/signup" && <Button>
 			
 				<button style={{background:"#e50914",
 				outline:"none",
@@ -118,7 +118,7 @@ export default function Banner({children, pathname}){
 		</Row>
 		{children}
 
-		{ pathname!="/signin" && <Container>
+		{ pathname!="/signin"   && pathname !="/signup" && <Container>
 				<h1 style={{
 					textAlign:"center",
 					fontSize:"3rem"

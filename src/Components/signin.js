@@ -1,6 +1,8 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import styled from 'styled-components/macro'
 import Footer from './footer'
+import {FirebaseContext} from '../firebase_context'
+import {Link,useHistory} from 'react-router-dom'
 
 
 import Banner from './banner'
@@ -40,7 +42,7 @@ const Row = styled.div`
 	align-items:center;
 	justify-content:space-between;
 `
-const Link = styled.a`
+const Links = styled.a`
 	text-decoration:none;
 	color:#aaadb3;
 
@@ -64,29 +66,93 @@ const Input = styled.input`
     border:none;
 `
 
-const getResolution =() =>{
-	
-	// alert(window.innerWidth)
-	console.log(window.innerWidth)
-	return window.innerWidth
-}
 
-getResolution();
+
 
 export default function SignIn(props){
-	// alert(props.location.pathname)
+		const history = useHistory();
+		console.log("propsvalues",props)
+	const {firebase} = useContext(FirebaseContext)
+	const [values, setValues] = useState({
+		email:"",
+		password:"",
+		error:""
+	});
+	const [username,setUsername] = useState("");
 
+	const changeValue =(e) =>{
+		console.log(e.target.name)
+		setValues({...values,[e.target.name]:e.target.value})
+
+	}
+
+	const submitForm = (e)=>{
+		e.preventDefault();
+		// history.push("/")
+		// alert("ok")
+
+		props.signup_path !=='/signup'?(
+		// firebase authentication
+		firebase.auth().signInWithEmailAndPassword(values.email,values.password)
+		.then(()=>{
+			// push to browse page
+			history.push("/")
+
+		})
+		.catch((error)=>{
+			setValues(
+				{
+					email:"",
+					password:"",
+					error:error.message
+
+				})
+
+
+		}))
+		:
+		(
+			firebase.auth()
+				.createUserWithEmailAndPassword(values.email, values.password)
+				.then((result)=> result.user.updateProfile({
+					displayName:username,
+					photoUrl:Math.floor(Math.random()*5)+1,
+
+				}))
+				.then(()=>history.push("/"))
+				.catch(error=>{
+					setValues({
+						email:"",
+						password:"",
+						error:error.message
+					});
+					setUsername("");
+				})
+
+
+			)
+	}
 
 	return ( <React.Fragment>
-		<Banner pathname={props.location.pathname}>
+		<Banner  pathname={props.location?.pathname || props.signup_path}>
 			<Div>
 			<InnerDiv>
-			<h1 style={{color:"white",marginBottom:"1.5em"}}>Sign In </h1>
+			<h1 style={{color:"white",marginBottom:"1.5em"}}>{props.signup_path==="/signup" ? "Sign Up" :"Sign In"} </h1>
+			{ values.error && <div style={{
+				backgroundColor:"orange",
+				padding:".7em 1em",
+				color:"black",
+				marginBottom:"1em",
+				borderRadius:"2px"
 
-			<Form>
-				<Input type="text" placeholder="Email or Phone Number"/> 
-				<Input type="password" placeholder="password"/>
-				<input type="submit" value="Sign In" style={{
+			}}>
+			{values.error}
+			</div>}
+			<Form onSubmit={submitForm}>
+				{props.signup_path=="/signup" && <Input  placeholder="username"/>}
+				<Input type="text" placeholder="Email or Phone Number" value={values.email} onChange={changeValue} name="email"/> 
+				<Input type="password" placeholder="password" value={values.password} onChange={changeValue} name="password"/>
+				<input type="submit" value={props.signup_path=="/signup" ? "Sign Up": "Sign In"} style={{
 					backgroundColor:"#e50914",
 					color:"white",
 					fontSize:"1.3rem",
@@ -97,15 +163,18 @@ export default function SignIn(props){
 
 
 				}}/>
-			<Row>
-				<div><input type="checkbox" checked="checked" onChange={()=>{}}style={{
+			{props.signup_path !="/signup" && 
+				<Row>
+				<div><input type="checkbox" onChange={()=>{}}style={{
 				}}/>
                <span>Remember Me</span>
                </div>
-                <Link href="#">
+                <Links href="#">
                 need help?
-                </Link>
+                </Links>
             </Row>
+
+			}
 			</Form>
 
 			 
@@ -113,11 +182,17 @@ export default function SignIn(props){
 
              <p style={{
              	marginTop:"3em"
-             }}>New to Netflix? <Link style={{color:"white",fontSize:"1.4rem"}}> Sign up now.</Link></p>
+             }}>
+
+             {props.signup_path=="/signup" ? "Already a member?  " : " New to Netflix?"}
+              <Link to={ props.signup_path=="/signup" ? "/signin" :"/signup"} style={{color:"white",fontSize:"1.4rem"}}> 
+{props.signup_path=="/signup" ? "Sign In" : " Sign Up Now"}
+
+              </Link></p>
              <p style={{
              	marginTop:"1em"
              }}>
-			This page is protected by Google reCAPTCHA to ensure you're not a bot. <Link style={{color:"blue"}}> Learn more.</Link>
+			This page is protected by Google reCAPTCHA to ensure you're not a bot. <Links style={{color:"blue"}}> Learn more.</Links>
              </p>
              </InnerDiv>
 			</Div>
