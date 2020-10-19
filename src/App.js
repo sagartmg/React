@@ -7,10 +7,10 @@ import Faq from './Components/faq'
 import Banner from './Components/banner'
 import Suscribe from './Components/suscribe'
 
-function App() {
+function App(props) {
   return (
     <div>
-      <Banner/>
+      <Banner pathname={props.location.pathname} />
      <Jumbotron.Container>
          {jumboData.map(jumbo=> 
           <Jumbotron key={jumbo.id} direction={jumbo.direction}>

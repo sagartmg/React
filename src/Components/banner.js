@@ -1,6 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import styled from 'styled-components/macro'
 import GetStarted from './get_started'
+import Footer from './footer'
 
 
 const Image = styled.img``
@@ -10,16 +12,33 @@ const Background = styled.div`
 display:flex;
 flex-direction:column;
 
-max-height:100vh;
+// border-bottom:8px solid #222;
+border-bottom:${ props=>{return props.path=="/" ? "8px solid #222" : null}};
+
+// max-height:${props=>{return props.path="/"? "100vh":null}};
 // max-width:100vw;
-height:100vh;
+min-height:100vh;
+
+
 // background:url(${props =>props.src}) center/cover no-repeat; OR
 background:url(${({src})=>src}) center/cover no-repeat;
+
+@media(max-width:768px){
+	background:${props=>{
+		// alert(props)
+		// console.log("signin",props)
+		return props.path=="/signin" ? "black" : null
+	}
+	
+
+
+}
 
 `
 
 const Row = styled.div`
 	padding:0 3em;
+	z-index:2;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
@@ -63,27 +82,37 @@ const Container = styled.div`
 `
 
 export default function Banner({children, pathname}){
-	console.log("signin",pathname)
-	console.log("children",children)
+	// console.log("signin",pathname)
+	// alert(pathname)
+	// console.log("children",children)
 
-	return <Background  src="/images/misc/home-bg.jpg">
-		<Row>
+	return <Background  src={ pathname=="/" ? "/images/misc/home-bg.jpg": "/images/misc/home-bg.jpg"} path={pathname}>
+	     	<Row>
+	     	<Link to="/">
 			<Logo src="/images/Netflix_logo.png"/>
+			</Link>
 			
 
 
 			{pathname !="/signin" && <Button>
-			<button style={{background:"#e50914",
-			outline:"none",
-			border:"transparent",
-			padding:"0.4em 0.8em",
-			color:"white",
-			borderRadius:"5%",
-			fontSize:"1.2rem",
+			
+				<button style={{background:"#e50914",
+				outline:"none",
+				border:"transparent",
+				padding:"0.4em 0.8em",
+				color:"white",
+				borderRadius:"5%",
+				fontSize:"1.2rem",
 
-			}}>
-			Sign In
-			</button>
+				}}>
+				<Link to="/signin" style={{
+					textDecoration:"none",
+					color:"white"
+				}}>
+				Sign In
+					</Link>
+
+				</button>
 			</Button>}
 
 		</Row>
@@ -125,7 +154,7 @@ export default function Banner({children, pathname}){
 
 
 
-
+	    {pathname=="/signin" &&  <Footer pathname={pathname}/>}
 	</Background>
 
 		

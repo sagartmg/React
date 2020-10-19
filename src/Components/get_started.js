@@ -28,6 +28,9 @@ export default function GetStarted(){
 		padding:"15px 10px",
     lineHeight:"100%",
     flexGrow:"1",
+    border:"none",
+    outline:"transparent",
+    borderRadius:"5px",
 	}}/>
 
 	<div className="button_container_subscription">

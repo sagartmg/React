@@ -3,12 +3,17 @@ import faq from '../Fixture/faqs'
 import styled from 'styled-components/macro'
 import GetStarted from './get_started'
 
+
+const Whole = styled.div`
+
+	// border-bottom:8px solid #222;
+
+`
 const Container= styled.div`
 	// max-width:60%;
 	margin:0 auto;
 	// width:498px;
 	margin-bottom:5em;
-	// border-bottom:4px solid red;
 
 	@media(min-width:992px){
 		// max-width:45%;
@@ -44,12 +49,14 @@ export default function Suscribe(){
 
 	return <>
 
+	<Whole>
 	<Container className = "subscription_container">
 	<p style={{color:"white",textAlign:"center",fontSize:"1.3rem",marginTop:".7em",marginBottom:".4em"}}>
 	Ready to watch? Enter your email to create or restart your membership.</p>
 	
 	<GetStarted/>
 	</Container>
+	</Whole>
 	
 	</>
 }	

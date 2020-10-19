@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useEffect,useState} from 'react';
 import styled from 'styled-components/macro'
 
 
@@ -15,6 +15,20 @@ const Row = styled.div`
   flex-direction:row;
   justify-content:space-between;
 `;
+
+const InnerRow = styled.div`
+  flex:1;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+
+
+  @media(max-width:576px){
+    flex-direction:column;
+  justify-content:flex-start;
+
+  }
+`
 const Column = styled.div`
   display:flex;
   flex-direction:column;
@@ -51,20 +65,49 @@ margin-top:5em;
 
 `
 const Container = styled.div`
-border-top:10px solid #222;
-margin-bottom:3em;
+border-top:${props=>props.pathname=="/signin"? null: "8px solid #222"};
+// margin-bottom:3em;
+padding-bottom:3em;
+margin-top:${props=>props.pathname=="/signin"? "3em":null};
+background-color:${ props=>props.pathname=="/signin"? "rgba(0,0,0,0.5)" : null};
+
+  @media(max-width:768px){
+    border-top:${props => {return props.pathname=="/signin" ? "2px solid #222": null}
+  }
+}
   
 `
 
 
 
-export default function Footer() {
+export default function Footer(props) {
+  const [size,setSize] = useState(window.innerWidth);
+  console.log("size",size)
+
+
+  const checkSize =() => setSize(window.innerWidth);
+
+  useEffect(()=>{
+    window.addEventListener("resize",checkSize)
+
+
+    //cleanup function
+    // everytime the useEffect is called, the cleanup for previous useEffect is done and 
+    // then only new useEffect execution takes place. 
+    return ()=>{
+      window.removeEventListener("resize",checkSize)
+    }
+  })  
+  //  or we could hvae use },[]) // empty dependency
+
+
   return (
 
-    <Container>
+    <Container pathname={props.pathname}>
    <FooterStyled>
       <Title>Questions? Contact us.</Title>
       <Row>
+        <InnerRow>
         <Column>
           <Link href="#">FAQ</Link>
           <Link href="#">Investor Relations</Link>
@@ -79,7 +122,9 @@ export default function Footer() {
           <Link href="#">Terms of Use</Link>
           <Link href="#">Contact Us</Link>
         </Column>
+        </InnerRow>
 
+        <InnerRow >
         <Column>
           <Link href="#">Account</Link>
           <Link href="#">Redeem gift cards</Link>
@@ -87,12 +132,13 @@ export default function Footer() {
           <Link href="#">Speed Test</Link>
         </Column>
 
-        <Column>
+         <Column>
           <Link href="#">Media Centre</Link>
           <Link href="#">Buy gift cards</Link>
           <Link href="#">Cookie Preferences</Link>
           <Link href="#">Legal Notices</Link>
         </Column>
+        </InnerRow>
       </Row>
       <Text>Netflix Nepal</Text>
     </FooterStyled>
