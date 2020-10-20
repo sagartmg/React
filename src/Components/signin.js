@@ -23,6 +23,7 @@ const Div = styled.div`
 `
 const InnerDiv = styled.div`
 	padding:0 50px;
+	padding-top:2em;
 	min-height:80vh;
 
 	@media(max-width:576px){
@@ -93,10 +94,14 @@ export default function SignIn(props){
 
 		props.signup_path !=='/signup'?(
 		// firebase authentication
+
 		firebase.auth().signInWithEmailAndPassword(values.email,values.password)
 		.then(()=>{
 			// push to browse page
-			history.push("/")
+			let userr = firebase.auth().currentUser;
+			const {photoURL,displayName} = userr;
+			localStorage.setItem("authUser",JSON.stringify({displayName:displayName,photoURL:photoURL}));
+			history.push("/browse")
 
 		})
 		.catch((error)=>{
@@ -109,17 +114,24 @@ export default function SignIn(props){
 				})
 
 
-		}))
+		})
+		
+		)
 		:
 		(
 			firebase.auth()
 				.createUserWithEmailAndPassword(values.email, values.password)
 				.then((result)=> result.user.updateProfile({
 					displayName:username,
-					photoUrl:Math.floor(Math.random()*5)+1,
+					photoURL:Math.floor(Math.random()*5)+1,
 
 				}))
-				.then(()=>history.push("/"))
+				.then(()=>{
+					let userr = firebase.auth().currentUser;
+			const {photoURL,displayName} = userr;
+			localStorage.setItem("authUser",JSON.stringify({displayName:displayName,photoURL:photoURL}));
+			history.push("/browse")
+			history.push("/browse")})
 				.catch(error=>{
 					setValues({
 						email:"",
@@ -149,7 +161,7 @@ export default function SignIn(props){
 			{values.error}
 			</div>}
 			<Form onSubmit={submitForm}>
-				{props.signup_path=="/signup" && <Input  placeholder="username"/>}
+				{props.signup_path=="/signup" && <Input  placeholder="username" onChange={(e)=>setUsername(e.target.value)}/>}
 				<Input type="text" placeholder="Email or Phone Number" value={values.email} onChange={changeValue} name="email"/> 
 				<Input type="password" placeholder="password" value={values.password} onChange={changeValue} name="password"/>
 				<input type="submit" value={props.signup_path=="/signup" ? "Sign Up": "Sign In"} style={{

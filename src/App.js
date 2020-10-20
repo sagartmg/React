@@ -6,8 +6,19 @@ import Footer from './Components/footer'
 import Faq from './Components/faq'
 import Banner from './Components/banner'
 import Suscribe from './Components/suscribe'
+import useAuthListener from './hooks/use_auth_listener'
+import useFirestoreData from './hooks/use_firestore_data';
+import selectionFilter from './utils/selection-filter'
+
+
 
 function App(props) {
+      // useAuthListener();
+  // const {series} = useFirestoreData("series")
+  // const {films} = useFirestoreData("films")
+  // console.log("series,",series)
+  // const slides = selectionFilter({series,films})
+  // console.log("slides,",slides)
   return (
     <div>
       <Banner pathname={props.location.pathname} />
