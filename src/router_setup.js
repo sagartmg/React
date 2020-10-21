@@ -11,19 +11,26 @@ import Browse from './Components/browse'
 import Logged from './logged'
 
 
-
+import useFirestoreData from './hooks/use_firestore_data';
+import selectionFilter from './utils/selection-filter';
+	
 
 export default function RouterSetup(){
+	 const {series} = useFirestoreData("series")
+	  const {films} = useFirestoreData("films")
+
+	  const slides = selectionFilter({series,films})
+	  console.log("router_setup,",slides)
 
 	return(
 			<Switch>
 			<Route exact path="/landing" component={App}/>
-			<Logged exact path="/" component={Browse}/>
+			<Logged exact path="/" component={()=><Browse slides={slides}/>}/>
 			<Route exact path="/signin" component={SignIn}/>
 			<Route exact path="/signup" component={SignUp}/>
 			<Route exact path="/hello" component={Hello}/>
 
-			<ProtectedRoute exact path ="/browse" component={Browse}/>
+			<ProtectedRoute exact path ="/browse" component={()=><Browse slides={slides}/>}/>
 
 			<Redirect to="/"/>
 

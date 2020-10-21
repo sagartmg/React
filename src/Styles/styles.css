@@ -2,7 +2,7 @@
 	margin:0;
 	padding: 0;
 	box-sizing: border-box;
-	border: 1px solid teal;
+	/*border: 1px solid teal;*/
 	/*justify-content: space-between;*/
 }
 
@@ -17,6 +17,26 @@
 }*/
 
 
+.searching{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+
+@media(max-width: 500px){
+	.searching{
+		/*display: none;*/
+		flex-direction: column-reverse;
+		align-items: flex-end;
+	}
+
+}
+@media(min-width: 768px){
+	.searching{
+	margin-right: 1em;
+		
+	}
+}
 
 .hide{
 	/*background-color: pink;*/
