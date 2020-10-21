@@ -6,6 +6,8 @@ import useFirestoreData from '../hooks/use_firestore_data';
 import selectionFilter from '../utils/selection-filter';
 import Fuse from 'fuse.js'
 import {useHistory} from 'react-router-dom'
+import { AiFillPlayCircle} from 'react-icons/ai';
+
 
 
 const Logo = styled.img`
@@ -24,7 +26,22 @@ width:100px;
 	width:50px;
 }
 `
+const Joker = styled.div`
+background:url(${(props)=>props.src}) no-repeat center ;
+// fixed background attachment
+background-size:contain;
+max-height:70vh;
+height:70vh;
+max-width:100vw;
+position:relative;
 
+@media(min-width:992px){
+// background:url(${(props)=>props.src}) no-repeat center ;
+background-attachment:fixed;
+
+
+}
+`
 
 const Container = styled.div`
 display:flex;
@@ -123,6 +140,7 @@ const Large = styled.div`
 	flex-direction:column;
 	position:relative;
 
+
 	@media(max-width:768px){ // 768  and less 
 		display:none;
 	}
@@ -135,6 +153,8 @@ const ELarge = styled.div`
 	display:flex;
 	flex-direction:column;
 	position:relative;
+	overflow:scroll;
+	font-size:.7rem;
 
 	@media(min-width:769px){  // 769 and to +infinithy applied too.  
 		display:none;
@@ -159,6 +179,29 @@ const Cross = styled.div`
 const LargeImage = styled.img`
 	width:100%;
 `
+const VideoContainer = styled.div`
+	position:fixed;
+	// bottom:calc(10%);
+	top:0;
+	background-color:rgba(0,0,0,0.8);
+
+	display:flex;
+	justify-content:center;
+	width:100%;
+	height:100%;
+	z-index:11111111111;
+
+`
+const Video = styled.video`
+	border-color:"transparent";
+	outline:"transparent";
+	width:70vw;
+
+	// postion:absolute;
+
+
+
+`
 export default function Browse(props){
 	const history = useHistory();
 	console.log("borserProps",props)
@@ -169,6 +212,7 @@ export default function Browse(props){
 	let localstorage_data = JSON.parse(localStorage.getItem("authUser"));
 	const{displayName,photoURL} = localstorage_data;
 	const [show_search , setShowSearch] = useState(false)
+	const [show_video, setShowVideo] = useState(false);
 	const [search_term, setSearchTerm] = useState("");
 	const [videos,setVideos] = useState("series")
 	const[enlarge , setEnlarge] =useState({});
@@ -234,7 +278,7 @@ export default function Browse(props){
 																		</CardMeta>
 																		
 
-																		{enlarge.title === meta.title && <ELarge src={enlarge.img_src}>
+																		{enlarge.title === meta.title && <ELarge className="ELarge" src={enlarge.img_src}>
 											
 																			<div style={{
 																				maxWidth:"44vw",
@@ -247,7 +291,8 @@ export default function Browse(props){
 
 																			}}>
 																				<p style={{marginBottom:"1em"}}>{enlarge.title}</p>
-																				<p>{enlarge.description}</p>
+																				<p className="description">{enlarge.description}</p>
+																				<AiFillPlayCircle className="play_icon" onClick={()=>setShowVideo(true)}/>
 																			</div>
 																			<Cross onClick={()=>{
 																				setEnlarge({})
@@ -285,6 +330,8 @@ export default function Browse(props){
 												}}>
 													<p style={{marginBottom:"1em"}}>{enlarge.title}</p>
 													<p>{enlarge.description}</p>
+													<AiFillPlayCircle className="play_icon" onClick={()=>setShowVideo(true)}/>
+
 												</div>
 												<Cross onClick={()=>{
 													setEnlarge({})
@@ -318,6 +365,7 @@ export default function Browse(props){
 	
 
 	return <React.Fragment>
+			<Joker src="/images/misc/joker1.jpg">
 			<Container>
 			<Left>
 			<Logo src="/images/Netflix_logo.png"/>
@@ -355,7 +403,66 @@ export default function Browse(props){
 					</div>
 				</Details>
 			</Right>
+
 			</Container>
+			<div style={{
+				maxWidth:"50vw",
+				paddingLeft:"3em",
+				color:"white",
+				position:"absolute",
+				bottom:"4em",
+			}}>
+				<h1>Watch Joker Now </h1>
+				<p>
+				Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City.
+
+				</p>
+				<button style={{
+					background:"#e50914",
+					padding:"0.3em 0.8em",
+					color:"white",
+					borderRadius:"5px",
+					marginTop:".7em"
+
+				}}
+				onClick={
+					()=>{
+						setShowVideo(true)
+					}
+				}>
+				Play
+				</button>
+			</div>
+			</Joker>
+			
+			{show_video && <VideoContainer>
+			<Video  controls autoPlay>
+				 <source src = "videos/bunny.mp4" type = "video/mp4"/>
+
+
+			</Video>
+			<div style={{
+				 	position:"fixed",
+				 	top:".3em",
+				 	right:"calc(16%)",
+				 	color:"red",
+				 	fontSize:"2rem",
+				 	zIndex:"9999999999",
+				 	height:"50px",
+				 	width:"50px",
+				 	borderRadius:"50%",
+				 	borderColor:"white",
+				 	display:"flex",
+				 	justifyContent:"center",
+				 	alignItems:"center",
+				 	cursor:"pointer"
+				 }} onClick={()=>{
+				 	setShowVideo(false);
+				 }}>
+				x 
+				 </div>
+			</VideoContainer>
+		}
 			{mapper()}
 
 

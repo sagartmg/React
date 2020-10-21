@@ -16,6 +16,12 @@
 	display: inline-block;
 }*/
 
+.ELarge::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 
 .searching{
 	display: flex;
@@ -23,6 +29,10 @@
 	align-items: center;
 }
 
+.play_icon{
+	font-size: 3rem;
+	cursor: pointer;
+}
 @media(max-width: 500px){
 	.searching{
 		/*display: none;*/
