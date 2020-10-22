@@ -211,6 +211,7 @@ export default function SignIn(props){
 
 
 	 </Banner>
+	 <Footer/>
 
 	 </React.Fragment>)
 
