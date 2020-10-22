@@ -154,7 +154,9 @@ export default function Banner({children, pathname}){
 
 
 
+	    {/* 
 	    {pathname=="/signin" &&  <Footer pathname={pathname}/>}
+	 */}
 	</Background>
 
 		
