@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    #map {
+      height: 100%;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }	
+  </style>
+</head>
+<body>
+  <div>
+    <button onclick="fuckClick()">clear all</button>
+    <button onclick="myFunction()">Click me</button>
+  </div>
+  <div id="map"></div>
+  <script>
+
+
+    function myFunction() {
+        alert("function")
+  // document.getElementById("demo").innerHTML = "Hello World";
+}
+
+    let map;
+    let markersArray = [];
+    let fixed_marker;
+    let polyline = null;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+
+      // map onclick listener 
+      map.addListener('click', function(e) {
+        //console.log(e);
+        addMarker(e.latLng);
+        console.log("even",e)
+
+        // drawPolyline();
+      });
+       let infoWindow = new google.maps.InfoWindow({
+        content: "Click the map to get Lat/Lng!",
+        position: {lat: -34.397, lng: 150.644},
+      });
+      infoWindow.open(map);
+
+    }
+
+
+    
+    //  const features = [
+    // {
+    //   position: new google.maps.LatLng(-33.91721, 151.2263),
+    //   type: "info",
+    // },
+    // {
+    //   position: new google.maps.LatLng(-33.91539, 151.2282),
+    //   type: "info",
+    // }
+    // ];
+    function removeMarkers(new_marker){
+       let marker = new google.maps.Marker({
+      position: new_marker,
+      draggable:true,
+      map: map,
+    });
+        marker.setMap(null);
+    }
+
+    function setMapOnAll(map) {
+      for (let i = 0; i < markersArray.length; i++) {
+        markersArray[i].setMap(map);
+      }
+    }
+
+    // define function to add marker at given lat & lng
+    function addMarker(latLng) {
+      // console.log("location",JSON.stringify(latLng.toJSON(), null, 2))
+
+
+       const new_marker = new google.maps.LatLng(latLng.lat(),latLng.lng());
+
+      // add listener to redraw the polyline when markers position change
+      // marker.addListener('position_changed', function() {
+      //   drawPolyline();
+      // });
+
+      //store the marker object drawn in global array
+      // markersArray.pop();
+      // removeMarkers(new_marker);
+      // setMapOnAll(null);
+      markersArray.push(new_marker);
+      console.log("markersArray",markersArray);
+      for (let i = 0; i < markersArray.length; i++) {
+      console.log("fo loop")
+      // console.log("position",markersArray[i])
+    const marker = new google.maps.Marker({
+      position: markersArray[i],
+      draggable:true,
+      map: map,
+    });
+    }
+
+    }
+     function fuckClick(){
+      alert("click")
+      setMapOnAll(null);
+    }
+
+    // define function to draw polyline that connect markers' position
+    // function drawPolyline() {
+    //   let markersPositionArray = [];
+    //   // obtain latlng of all markers on map
+    //   markersArray.forEach(function(e) {
+    //     markersPositionArray.push(e.getPosition());
+    //   });
+
+    //   // check if there is already polyline drawn on map
+    //   // remove the polyline from map before we draw new one
+    //   if (polyline !== null) {
+    //     polyline.setMap(null);
+    //   }
+
+    //   // draw new polyline at markers' position
+    //   polyline = new google.maps.Polyline({
+    //     map: map,
+    //     path: markersPositionArray,
+    //     strokeOpacity: 0.4
+    //   });
+    // }
+
+  </script>
+  <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly">
+  </script>
+</body>
+</html>

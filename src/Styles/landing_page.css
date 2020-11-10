@@ -1,28 +1,68 @@
+.navigation{
+	/*background: orange;*/
+	background: pink;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	/*padding-top: 2em;*/
+	/*margin-top: 2em;*/
+	position: absolute;
+	width: 100%;
+	/*width: 1200px;*/
+	
+	top: 2em;
+	
+	/*margin: 0px auto;*/
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
+	/*left: auto;
+	right: auto;*/
+
+
+}
+.nav_inner{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 80%;
+	max-width: 80%;
+	padding-bottom: 1em;
+	border-bottom: 1px solid black; 
+	/*display: none;*/
+}
+.nav_links{
+	margin-left: 1.5em;
+}
+
 .container{
 	/*width:100vw;*/
 	max-width:100vw;
 	height:100vh;
 	max-height:100vh;
-	background-color: teal;
+	background-color: pink;
 	/*position: relative;*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }	
 .give_get_container{
-	background-color: red;
+	/*background-color: red;*/
 	/*padding: 1em;*/
 }
 
 .getblood{
 	/*position: absolute;*/
 	background-color: green;
+	color: orange;
 	padding: 1em;
 
 }
 .giveblood{
 	/*position: absolute;*/
+	margin-top: 1em;
 	background-color: orange;
+	color: green;
 	padding: 1em;
 
 }

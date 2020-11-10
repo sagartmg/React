@@ -1,22 +1,37 @@
-import React,{useState} from 'react';
-// import { Datepicker } from "datepickerdate";
+import React,{useState,useContext} from 'react';
+import {FirebaseContext} from '../Context/firebase_context'
 
 
 
 export default function GiveBlood() {
+	const {firebase} = useContext(FirebaseContext)
 	const [date,setDate] = useState(new Date().toString())
 	const [age,setAge] = useState(0);
-	// function handleCtrlChange(name, value) {
- //    console.log(name, value);
+	
+
+	function submitted(){
+		window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+		  'size': 'normal',
+		  'callback': function(response) {
+		    // reCAPTCHA solved, allow signInWithPhoneNumber.
+		    // onSignInSubmit();/
+		    alert("captcha solved")
+		  }
+		});
+		// window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+
+
+		// firebase.auth().signInWithPhoneNumber(number,)
+	}
+
+
  	function today(){
  		let today= new Date();
  		let year = today.getFullYear().toString();
- 		let month = today.getMonth().toString();
+ 		let month = (today.getMonth()+1).toString();
  		let date = today.getDate().toString();
- 		// console.log(date);
- 		// console.log(month,typeof(month));
+ 		
  		if(month.length===1){
- 			// alert("")
  			month = "0"+month;
  		}
  		if(date.length===1){
@@ -24,22 +39,15 @@ export default function GiveBlood() {
  		}
 
   		let today_date =  `${year}-${month}-${date}`
+  		console.log(today_date);
   		return today_date;
  	}
+
  	today();
  	
- //  }
-  // new Date().toISOString()
   return (
   	<>
-  	{/* 
-  	<Datepicker
-        name="yourFormControlName"
-        value="2019-08-28"
-        placeholder="Your custom placeholder"
-        onDateChanged={this.handleCtrlChange}
-      />
-       */}
+  	
   	<div>
   		login
   		<input placeholder="phonenumber"/>
@@ -67,14 +75,14 @@ export default function GiveBlood() {
   		location
   		bloodgroup
   		<select name="bloodgroup" id="bloodgroup">
-		    <option value ="A+">A RhD positive (A+)</option>
-		    <option value ="A-">A RhD negative (A-)</option>
-		    <option value ="B+">B RhD positive (B+)</option>
-		    <option value ="B-">B RhD negative (B-)</option>
-		    <option value ="O+">O RhD positive (O+)</option>
-		    <option value ="O-">O RhD negative (O-)</option>
-		    <option value ="AB+">AB RhD positive (AB+)</option>
-		    <option value="AB-">AB RhD negative (AB-)</option>
+		    <option value ="A+">A+</option>
+		    <option value ="A-">A-</option>
+		    <option value ="B+">B+</option>
+		    <option value ="B-">B-</option>
+		    <option value ="O+">O+</option>
+		    <option value ="O-">O-</option>
+		    <option value ="AB+">AB+</option>
+		    <option value="AB-">AB-</option>
 
 		 </select>
 		<input type="submit" value="save"/>
@@ -82,6 +90,8 @@ export default function GiveBlood() {
     </form>
    </div>
    {date}{age}
+   <div className="recaptcha-container">
+   </div>
    </>
   );
 }

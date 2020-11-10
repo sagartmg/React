@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "datepickerdate": "^1.5.1",
     "dom": "0.0.3",
+    "firebase": "^7.24.0",
+    "google-maps-react": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router": "^5.2.0",

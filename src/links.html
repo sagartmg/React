@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Emergency Blood</title>
+  </head>
+  <body>
+    <form onsubmit="holdUp(event)">
+	<input type="text" name="url"
+	       placeholder="example.com"
+	        size="30"
+	       >
+  <input type="submit">
+</form>
+
+<a href="https://www.youtube.com">ouytubee</a>
+<a href="https://www.youtube.com">outufbee</a>
+<a href="https://www.youtube.com">outfdsfubee</a>
+<a href="https://www.youtube.com">outubee</a>
+
+<div id="recaptcha-container"></div>
+<input type="text" placeholder="phoneNmber" id="phoneNmber" value="+9779840425514">
+<button id="getcode">getcode</button>
+<input type="text" placeholder="code" id="code">
+<button id="signInWithPhone">signin</button>
+
+
+<!-- <iframe src="https://sagartmg.netlify.app/" id="ifrm" name="iframe_a" height="300px" width="70%" title="Iframe Example"></iframe> -->
+
+<!-- <script type="text/javascript"> -->
+
+<!-- // reference to iframe with id 'ifrm'
+// var ifrm = document.getElementById('ifrm');
+// ifrm.style.width = '400px'; // set width
+// // ifrm.src = "https://kissanime.nz/Anime/One-Piece.85574/"; // set src to new url
+// // using reference to iframe (ifrm) obtained above
+// var win = ifrm.contentWindow; // reference to iframe's window
+// // reference to document in iframe
+// var doc = ifrm.contentDocument? ifrm.contentDocument: ifrm.contentWindow.document;
+// reference to form named 'demoForm' in iframe
+document.getElementById('ifrm').onload = function() {
+
+
+	var ifrm = document.getElementById('ifrm');
+	ifrm.style.width = '400px'; // set width
+	// ifrm.src = "https://kissanime.nz/Anime/One-Piece.85574/"; // set src to new url
+	// using reference to iframe (ifrm) obtained above
+	var win = ifrm.contentWindow; // reference to iframe's window
+	// reference to document in iframe
+	var doc = ifrm.contentDocument? ifrm.contentDocument: ifrm.contentWindow.document;
+
+
+	
+	console.log("innder_doc",doc)
+	console.log("outer doc",document)
+
+	let inner_links = doc.getElementsByTagName("a");
+	let outer_links = document.getElementsByTagName("a");
+	console.log("inner_links__iframe",inner_links);
+	// console.log("outer_links_iframe",outer_links);
+
+	// alert("ifriame loaded")
+}
+		
+
+	holdUp =(e) =>{
+		// console.log(e);
+				e.preventDefault();
+				alert(e.target.url.value)
+
+					}
+	
+
+
+
+	// let all_links = document.getElementsByTagName("a")
+	// console.log("all_links",all_links)
+	// links_arr = [...all_links]
+	// links_arr.forEach(link=>{
+	//   console.log(link);
+	//   link.setAttribute("href","#");
+	// })
+
+
+	window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    let all_links = document.getElementsByTagName("a")
+	console.log("all_links",all_links)
+	links_arr = [...all_links]
+	links_arr.forEach(link=>{
+	  console.log(link);
+	  link.setAttribute("href","#");
+	})
+	}); -->
+
+
+
+	
+
+<!-- </script> -->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  
+
+  <script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyA3WINPRiRQZe2UseIYzpYeftGLi5J54H4",
+    authDomain: "blood-215d3.firebaseapp.com",
+    databaseURL: "https://blood-215d3.firebaseio.com",
+    projectId: "blood-215d3",
+    storageBucket: "blood-215d3.appspot.com",
+    messagingSenderId: "641957685258",
+    appId: "1:641957685258:web:3216d8fdb8ef0992ea57f3",
+    measurementId: "G-CYG11JBVFT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript">
+	const auth = firebase.auth();
+
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+	recaptchaVerifier.render().then(widgetId => {
+  window.recaptchaWidgetId = widgetId;
+})
+</script>
+<script type="text/javascript">
+	const signInWithPhoneButton = document.getElementById('signInWithPhone');
+
+	const phoneNumber_value = document.getElementById('phoneNmber');
+	console.log()
+
+
+	const sendVerificationCode = () => {
+  const phoneNumber = phoneNumber_value.value;
+  const appVerifier = window.recaptchaVerifier;
+
+  auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+  .then(confirmationResult => {
+    const sentCodeId = confirmationResult.verificationId;
+    signInWithPhoneButton.addEventListener('click', () => signInWithPhone(sentCodeId));
+  })
+}
+
+const signInWithPhone = sentCodeId => {
+	const codeField = document.getElementById('code');
+
+  const code = codeField.value;
+  const credential = firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
+  auth.signInWithCredential(credential)
+  .then(() => {
+  	alert("success")
+    // window.location.assign('./profile');
+  })
+  .catch(error => {
+  	alert("fuck")
+    // console.error(error);
+  })
+}
+
+
+	
+	const getCode = document.getElementById('getcode');
+	getCode.addEventListener('click', sendVerificationCode);
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+.form_container{
+	background-color: pink;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+/*.form_container_inner{*/
+	/*display: none;*/
+	/*padding: 2em;*/
+	/*justify-content: */
+	/*width: 50vw;*/
+/*}*/
+.form_actual{
+	/*background: green;*/
+	display: flex;
+	flex-direction: column;
+	/*flex-grow: 1;*/
+	/*max-height: 89vh;*/
+	/*justify-content: space-around;*/
+	/*align-items:*/
+	padding: 2em;
+	width: 30vw;
+}
+.get_big{
+	/*height: 2em;*/
+	padding:1em 1.5em;
+}
+.checkbox_container{
+	display: flex;
+	align-items: center;
+	/*justify-content: space-between;*/
+	/*justify-content: space-around*/
+
+}
+.checkbox_container p{
+	margin-left: 1em;
+}
+.form_titles{
+	/*background: red;*/
+	margin-bottom: .2em !important;
+	/*display: flex;*/
+	/*flex*/
+	/*justify-content: center;*/
+}
+#next_btn{
+	/*background: red;*/
+	border-radius: 5px;
+	padding: .7em 2em;
+	/*display: inline;*/
+	/*display: inline-block;*/
+	/*width: 100px;*/
+
+}
+.next_btn_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
